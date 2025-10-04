@@ -60,7 +60,7 @@ All plugins of the ${factoryNameHighlight} can share a common Maven
 $h3 Project-dependent settings (root POM)
 
 For standard Maven projects, there is a
-[super POM](http://maven.apache.org/ref/3.1.1/maven-model-builder/super-pom.html)
+[super POM](http://maven.apache.org/ref/3.9.11/maven-model-builder/super-pom.html)
 which defines default properties.
 
 In ${factoryNameHighlight} there is a need for a custom super POM with custom

@@ -41,11 +41,11 @@ $h1 Default "settings.xml" sample file
 				<tibco.home>C:/tibco</tibco.home>
 				<executables.extension>.exe</executables.extension>
 				<libraries.extension>.dll</libraries.extension>
-				<tibco.bw.version>5.12</tibco.bw.version>
-				<tibco.designer.version>5.9</tibco.designer.version>
-				<tibco.ems.version>6.3</tibco.ems.version>
-				<tibco.tra.version>5.9</tibco.tra.version>
-				<tibco.rv.version>8.4</tibco.rv.version>
+				<tibco.bw.version>5.16</tibco.bw.version>
+				<tibco.designer.version>5.13</tibco.designer.version>
+				<tibco.ems.version>10.4</tibco.ems.version>
+				<tibco.tra.version>5.13</tibco.tra.version>
+				<tibco.rv.version>8.8</tibco.rv.version>
 			</properties>
 		</profile>
 
