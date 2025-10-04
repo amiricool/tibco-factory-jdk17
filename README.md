@@ -10,12 +10,12 @@ FastConnect TIBCO Factory is composed of several elements:
 Requirements
 -------------
 1. Available Internet connection
-2. Installed Oracle JDK 6 or higher
-3. Installed Maven 3 or higher
+2. Installed Oracle JDK 17 or higher
+3. Installed Maven 3.9 or higher
 
 Copyright and license
 ----------------------
-Copyright (c) 2011-2015 FastConnect SAS. All rights reserved.
+Copyright (c) 2011-2025 FastConnect SAS. All rights reserved.
 
 Licensed under the Apache License, Version 2.0 (the "License");<br/>
 you may not use this file except in compliance with the License.<br/>
