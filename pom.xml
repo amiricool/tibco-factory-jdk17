@@ -349,7 +349,8 @@
 						replace parameters in Maven site URL <url>
 						(for mvnrepository.com for instance)
 						-->
-						<plugin> <!-- TODO Replace this plugin with maven-antrun-plugin-->
+<!--
+						<plugin>
 							<groupId>com.google.code.maven-replacer-plugin</groupId>
 							<artifactId>replacer</artifactId>
 							<version>1.5.3</version>
@@ -400,7 +401,46 @@
 								</execution>
 							</executions>
 						</plugin>
-					</plugins>
+-->
+                        <plugin>
+                            <groupId>org.apache.maven.plugins</groupId>
+                            <artifactId>maven-antrun-plugin</artifactId>
+                            <version>3.1.0</version>
+                            <executions>
+                                <execution>
+                                    <id>replace-properties</id>
+                                    <phase>verify</phase>
+                                    <goals><goal>run</goal></goals>
+                                    <configuration>
+                                        <target>
+
+                                            <replace file="${project.basedir}/pom.xml"
+                                                     token="&lt;url&gt;\$\{repositorySiteDisplayURL\}&lt;/url&gt;"
+                                                     value="&lt;url&gt;${repositoryArchiveSiteDisplayURL}&lt;/url&gt;"/>
+                                            <replace file="${project.basedir}/pom.xml"
+                                                     token="&lt;releaseVersion&gt;\$\{project.version\}&lt;/releaseVersion&gt;"
+                                                     value="&lt;releaseVersion&gt;${project.version}&lt;/releaseVersion&gt;"/>
+
+                                            <!-- Regex multi-lignes -->
+                                            <replaceregexp file="${project.basedir}/pom.xml"
+                                                           match="&lt;bw.maven.plugin.version&gt;.*&lt;/bw.maven.plugin.version&gt;"
+                                                           replace="&lt;bw.maven.plugin.version&gt;${bw.maven.plugin.version}&lt;/bw.maven.plugin.version&gt;"
+                                                           flags="s"/>
+                                            <replaceregexp file="${project.basedir}/pom.xml"
+                                                           match="&lt;code.review.plugin.version&gt;.*&lt;/code.review.plugin.version&gt;"
+                                                           replace="&lt;code.review.plugin.version&gt;${code.review.plugin.version}&lt;/code.review.plugin.version&gt;"
+                                                           flags="s"/>
+                                            <replaceregexp file="${project.basedir}/pom.xml"
+                                                           match="&lt;fcunit.plugin.version&gt;.*&lt;/fcunit.plugin.version&gt;"
+                                                           replace="&lt;fcunit.plugin.version&gt;${fcunit.plugin.version}&lt;/fcunit.plugin.version&gt;"
+                                                           flags="s"/>
+                                        </target>
+                                    </configuration>
+                                </execution>
+                            </executions>
+                        </plugin>
+
+                    </plugins>
 				</pluginManagement>
 				<plugins>
 					<plugin>
@@ -517,11 +557,11 @@
 				<artifactId>joox</artifactId>
 				<version>2.0.1</version>
 			</dependency>
-			<dependency><!-- TODO -->
+            <!--<dependency>
 				<groupId>com.github.goldin</groupId>
 				<artifactId>copy-maven-plugin</artifactId>
 				<version>0.2.5</version>
-			</dependency>
+			</dependency>-->
 			<dependency>
 				<groupId>xerces</groupId>
 				<artifactId>xercesImpl</artifactId>
