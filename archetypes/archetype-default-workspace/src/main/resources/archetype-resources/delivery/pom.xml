@@ -68,8 +68,8 @@
 					</execution>
 				</executions>
 			</plugin>
-			<plugin>
-				<groupId>org.codehaus.mojo</groupId><!-- TODO-->
+<!--			<plugin>
+				<groupId>org.codehaus.mojo</groupId>&lt;!&ndash; TODO&ndash;&gt;
 				<artifactId>truezip-maven-plugin</artifactId>
 				<version>1.2</version>
 				<executions>
@@ -119,8 +119,67 @@
 						</configuration>
 					</execution>
 				</executions>
-			</plugin>
-			<plugin>
+			</plugin>-->
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <version>3.1.0</version>
+                <executions>
+
+                    <!-- extract-poms :: prepare-package -->
+                    <execution>
+                        <id>extract-poms</id>
+                        <phase>prepare-package</phase>
+                        <goals><goal>run</goal></goals>
+                        <configuration>
+                            <target>
+                                <mkdir dir="${project.build.directory}/copy-fileset"/>
+                                <unzip src="${archive}" dest="${project.build.directory}/copy-fileset">
+                                    <patternset>
+                                        <include name="${deploy.pom}"/>
+                                        <include name="${package.bw.applications.root}/**/${deploy.pom}"/>
+                                    </patternset>
+                                </unzip>
+                            </target>
+                        </configuration>
+                    </execution>
+
+                    <!-- include-fixed-poms :: package -->
+                    <execution>
+                        <id>include-fixed-poms</id>
+                        <phase>package</phase>
+                        <goals><goal>run</goal></goals>
+                        <configuration>
+                            <target>
+                                <!-- Met à jour le ZIP en place avec les POM corrigés -->
+                                <zip destfile="${archive}" update="true">
+                                    <fileset dir="${project.build.directory}/copy-fileset">
+                                        <include name="${deploy.pom}"/>
+                                        <include name="${package.bw.applications.root}/**/${deploy.pom}"/>
+                                    </fileset>
+                                </zip>
+                            </target>
+                        </configuration>
+                    </execution>
+
+                    <!-- unzip :: package -->
+                    <execution>
+                        <id>unzip</id>
+                        <phase>package</phase>
+                        <goals><goal>run</goal></goals>
+                        <configuration>
+                            <target>
+                                <mkdir dir="${project.build.directory}/${deploy.extract}"/>
+                                <unzip src="${archive}" dest="${project.build.directory}/${deploy.extract}"/>
+                            </target>
+                        </configuration>
+                    </execution>
+
+                </executions>
+            </plugin>
+
+            <plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-antrun-plugin</artifactId>
                 <version>3.1.0</version>
