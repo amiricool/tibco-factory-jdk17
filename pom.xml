@@ -443,11 +443,11 @@
                     </plugins>
 				</pluginManagement>
 				<plugins>
-					<plugin>
-						<groupId>com.google.code.maven-replacer-plugin</groupId>
-						<artifactId>replacer</artifactId>
-						<inherited>false</inherited>
-					</plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-antrun-plugin</artifactId>
+                        <inherited>false</inherited>
+                    </plugin>
 					<!-- sign artifacts with GnuPG -->
 					<plugin>
 						<groupId>org.apache.maven.plugins</groupId>
