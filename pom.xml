@@ -42,6 +42,7 @@
         <maven.antrun.plugin.version>3.1.0</maven.antrun.plugin.version>
         <maven.gpg.plugin.version>3.2.8</maven.gpg.plugin.version>
         <maven.enforcer.plugin.version>3.6.1</maven.enforcer.plugin.version>
+        <maven.install.plugin.version>3.1.4</maven.install.plugin.version>
         <license.maven.plugin.version>5.0.0</license.maven.plugin.version>
         <jaxws.maven.plugin.version>4.0.3</jaxws.maven.plugin.version>
         <doxia.module.markdown.version>2.0.0</doxia.module.markdown.version>
@@ -807,8 +808,13 @@
                 which is shared among all projects and developpers. -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-install-plugin</artifactId>
+                <version>${maven.install.plugin.version}</version>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-enforcer-plugin</artifactId>
-                <version>${maven.enforcer.plugin.version}</version> <!-- Update for java 17-->
+                <version>${maven.enforcer.plugin.version}</version>
                 <executions>
                     <execution>
                         <id>enforce-property</id>
