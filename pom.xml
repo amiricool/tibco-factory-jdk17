@@ -268,7 +268,6 @@
 						</reportSets>
 						<configuration>
 							<failOnError>false</failOnError>
-							<aggregate>false</aggregate>
 							<detectLinks>true</detectLinks>
 							<detectOfflineLinks>false</detectOfflineLinks>
 							<links>
@@ -468,9 +467,9 @@
                     </plugin>
 					<!-- sign artifacts with GnuPG -->
 					<plugin>
-						<groupId>org.apache.maven.plugins</groupId>
-						<artifactId>maven-gpg-plugin</artifactId>
-						<version>3.2.8</version>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-gpg-plugin</artifactId>
+                        <version>3.2.8</version>
 						<executions>
 							<execution>
 								<id>sign-artifacts</id>

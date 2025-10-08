@@ -68,66 +68,12 @@
 					</execution>
 				</executions>
 			</plugin>
-<!--			<plugin>
-				<groupId>org.codehaus.mojo</groupId>&lt;!&ndash; TODO&ndash;&gt;
-				<artifactId>truezip-maven-plugin</artifactId>
-				<version>1.2</version>
-				<executions>
-					<execution>
-						<id>extract-poms</id>
-						<phase>prepare-package</phase>
-						<goals>
-							<goal>copy</goal>
-						</goals>
-						<configuration>
-							<fileset>
-								<directory>${archive}</directory>
-								<includes>
-									<include>${deploy.pom}</include>
-									<include>${package.bw.applications.root}/**/${deploy.pom}</include>
-								</includes>
-								<outputDirectory>${project.build.directory}/copy-fileset</outputDirectory>
-							</fileset>
-						</configuration>
-					</execution>
-					<execution>
-						<id>include-fixed-poms</id>
-						<phase>package</phase>
-						<goals>
-							<goal>copy</goal>
-						</goals>
-						<configuration>
-							<fileset>
-								<directory>${project.build.directory}/copy-fileset</directory>
-								<includes>
-									<include>${deploy.pom}</include>
-									<include>${package.bw.applications.root}/**/${deploy.pom}</include>
-								</includes>
-								<outputDirectory>${archive}</outputDirectory>
-							</fileset>
-						</configuration>
-					</execution>
-					<execution>
-						<id>unzip</id>
-						<phase>package</phase>
-						<goals>
-							<goal>cp</goal>
-						</goals>
-						<configuration>
-							<from>${archive}</from>
-							<to>${project.build.directory}/${deploy.extract}</to>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>-->
 
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-antrun-plugin</artifactId>
                 <version>3.1.0</version>
                 <executions>
-
-                    <!-- extract-poms :: prepare-package -->
                     <execution>
                         <id>extract-poms</id>
                         <phase>prepare-package</phase>
@@ -144,15 +90,12 @@
                             </target>
                         </configuration>
                     </execution>
-
-                    <!-- include-fixed-poms :: package -->
                     <execution>
                         <id>include-fixed-poms</id>
                         <phase>package</phase>
                         <goals><goal>run</goal></goals>
                         <configuration>
                             <target>
-                                <!-- Met à jour le ZIP en place avec les POM corrigés -->
                                 <zip destfile="${archive}" update="true">
                                     <fileset dir="${project.build.directory}/copy-fileset">
                                         <include name="${deploy.pom}"/>
@@ -162,8 +105,6 @@
                             </target>
                         </configuration>
                     </execution>
-
-                    <!-- unzip :: package -->
                     <execution>
                         <id>unzip</id>
                         <phase>package</phase>
