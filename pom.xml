@@ -408,12 +408,30 @@
                             <version>3.1.0</version>
                             <executions>
                                 <execution>
-                                    <id>replace-properties</id>
+                                    <id>replace-site-url</id>
                                     <phase>verify</phase>
-                                    <goals><goal>run</goal></goals>
+                                    <goals>
+                                        <goal>run</goal>
+                                    </goals>
                                     <configuration>
-                                        <target>
+                                        <target name="replace-site-url">
+                                            <replace
+                                                    file="${project.basedir}/pom.xml"
+                                                    token="&lt;url&gt;\$\{repositorySiteDisplayURL\}&lt;/url&gt;"
+                                                    value="&lt;url&gt;${repositoryArchiveSiteDisplayURL}&lt;/url&gt;" />
+                                        </target>
+                                    </configuration>
+                                </execution>
 
+                                <execution>
+                                    <id>update-versions</id>
+                                    <phase>verify</phase>
+                                    <inherited>false</inherited>
+                                    <goals>
+                                        <goal>run</goal>
+                                    </goals>
+                                    <configuration>
+                                        <target name="update-versions">
                                             <replace file="${project.basedir}/pom.xml"
                                                      token="&lt;url&gt;\$\{repositorySiteDisplayURL\}&lt;/url&gt;"
                                                      value="&lt;url&gt;${repositoryArchiveSiteDisplayURL}&lt;/url&gt;"/>
