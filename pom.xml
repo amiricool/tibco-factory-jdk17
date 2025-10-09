@@ -539,6 +539,11 @@
                 <artifactId>xalan</artifactId>
                 <version>${xalan.version}</version>
             </dependency>
+            <dependency>
+                <groupId>xalan</groupId>
+                <artifactId>serializer</artifactId>
+                <version>${xalan.version}</version>
+            </dependency>
 
             <!-- TIBCO dependencies -->
             <!-- Hawk -->
