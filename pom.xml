@@ -21,7 +21,7 @@
         <fcUnitPluginVersion>${fcunit.plugin.version}</fcUnitPluginVersion>
 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <bw.maven.plugin.version>2.3.3</bw.maven.plugin.version>
+        <bw.maven.plugin.version>2.4.2-SNAPSHOT</bw.maven.plugin.version>
         <code.review.plugin.version>2.0.0</code.review.plugin.version>
         <fcunit.plugin.version>2.0.0</fcunit.plugin.version>
         <xmlunit.version>2.10.4</xmlunit.version>
