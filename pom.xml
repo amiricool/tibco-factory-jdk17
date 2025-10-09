@@ -58,6 +58,8 @@
         <xerces.version>2.12.2</xerces.version>
         <xalan.version>2.7.3</xalan.version>
         <plexus.utils.version>4.0.2</plexus.utils.version>
+        <version>${jaxws.maven.plugin.version}</version>
+        <jaxws.version>4.0.3</jaxws.version>
 
         <repositoryReleaseURL>${settingsRepositoryReleaseURL}</repositoryReleaseURL>
         <repositorySnapshotURL>${settingsRepositorySnapshotURL}</repositorySnapshotURL>
