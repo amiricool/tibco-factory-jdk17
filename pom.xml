@@ -843,6 +843,10 @@
                         </goals>
                         <configuration>
                             <rules>
+                                <requireJavaVersion>
+                                    <version>[${maven.compiler.release},)</version>
+                                    <message><![CDATA[You must build with at least Java ${maven.compiler.release}.]]></message>
+                                </requireJavaVersion>
                                 <requireProperty>
                                     <property>tibco.home</property>
                                     <message><![CDATA[You must have a tibco.home property. Check your settings.xml!]]></message>
