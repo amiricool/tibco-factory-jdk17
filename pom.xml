@@ -68,6 +68,7 @@
         <jakarta.xml.ws.api.version>4.0.2</jakarta.xml.ws.api.version>
         <jaxb.core.version>4.0.6</jaxb.core.version>
         <jakarta.activation.api.version>2.1.4</jakarta.activation.api.version>
+        <mavenFluidoSkinVersion>1.11.2</mavenFluidoSkinVersion>
 
         <repositoryReleaseURL>${settingsRepositoryReleaseURL}</repositoryReleaseURL>
         <repositorySnapshotURL>${settingsRepositorySnapshotURL}</repositorySnapshotURL>
@@ -914,6 +915,9 @@
             <name>Mathieu Debove</name>
             <url>https://github.com/debovema</url>
             <id>debovema</id>
+        </developer>
+        <developer>
+            <name>Amir MARZOUK</name>
         </developer>
     </developers>
     <licenses>
