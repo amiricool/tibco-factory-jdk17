@@ -68,6 +68,8 @@
         <jakarta.xml.ws.api.version>4.0.2</jakarta.xml.ws.api.version>
         <jaxb.core.version>4.0.6</jaxb.core.version>
         <jakarta.activation.api.version>2.1.4</jakarta.activation.api.version>
+        <tibcoHawkArtifactVersion>6.3</tibcoHawkArtifactVersion>
+        <tibcoTibrvjArtifactVersion>8.8</tibcoTibrvjArtifactVersion>
         <mavenFluidoSkinVersion>1.11.2</mavenFluidoSkinVersion>
 
         <repositoryReleaseURL>${settingsRepositoryReleaseURL}</repositoryReleaseURL>
@@ -559,23 +561,23 @@
             <dependency>
                 <groupId>com.tibco.hawk</groupId>
                 <artifactId>console</artifactId>
-                <version>4.9</version>
+                <version>${tibcoHawkArtifactVersion}</version>
             </dependency>
             <dependency>
                 <groupId>com.tibco.hawk</groupId>
                 <artifactId>talon</artifactId>
-                <version>4.9</version>
+                <version>${tibcoHawkArtifactVersion}</version>
             </dependency>
             <dependency>
                 <groupId>com.tibco.hawk</groupId>
                 <artifactId>util</artifactId>
-                <version>4.9</version>
+                <version>${tibcoHawkArtifactVersion}</version>
             </dependency>
             <!-- RendezVous -->
             <dependency>
                 <groupId>com.tibco.rv</groupId>
                 <artifactId>tibrvj</artifactId>
-                <version>8.3</version>
+                <version>${tibcoTibrvjArtifactVersion}</version>
             </dependency>
             <!-- Maven dependencies -->
             <dependency>
