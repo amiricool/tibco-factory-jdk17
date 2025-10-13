@@ -1,0 +1,17 @@
+
+mvn install:install-file -Dfile="/Users/amirmarzouk/Documents/Work/myjava/console.jar" -DgroupId=com.tibco.hawk -DartifactId=console -Dversion=6.3 -Dpackaging=jar -DgeneratePom=true
+mvn install:install-file -Dfile="/Users/amirmarzouk/Documents/Work/myjava/talon.jar"   -DgroupId=com.tibco.hawk -DartifactId=talon   -Dversion=6.3 -Dpackaging=jar -DgeneratePom=true
+mvn install:install-file -Dfile="/Users/amirmarzouk/Documents/Work/myjava/util.jar"    -DgroupId=com.tibco.hawk -DartifactId=util    -Dversion=6.3 -Dpackaging=jar -DgeneratePom=true
+
+
+mvn install:install-file -Dfile="/Users/amirmarzouk/Documents/Work/myjava/tibrvj.jar" -DgroupId=com.tibco.rv    -DartifactId=tibrvj  -Dversion=8.8 -Dpackaging=jar -DgeneratePom=true
+
+
+
+mvn install:install-file -Dfile="/Users/amirmarzouk/Documents/Work/myjava/engine.jar" -DgroupId=com.tibco.bw    -DartifactId=engine  -Dversion=5.16 -Dpackaging=jar -DgeneratePom=true
+
+
+
+mvn install:install-file -Dfile="/Users/amirmarzouk/Documents/Work/myjava/xdata.jar" -DgroupId=com.tibco.bw    -DartifactId=xdata  -Dversion=5.16 -Dpackaging=jar -DgeneratePom=true
+
+
