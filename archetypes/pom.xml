@@ -22,7 +22,7 @@
 			<extension>
 				<groupId>org.apache.maven.archetype</groupId>
 				<artifactId>archetype-packaging</artifactId>
-                <version>${archetype-packaging.version}</version>
+                <version>${archetype.packaging.version}</version>
 			</extension>
 		</extensions>
 		<plugins>

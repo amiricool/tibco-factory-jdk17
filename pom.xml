@@ -44,9 +44,9 @@
         <maven.gpg.plugin.version>3.2.8</maven.gpg.plugin.version>
         <maven.enforcer.plugin.version>3.6.1</maven.enforcer.plugin.version>
         <maven.install.plugin.version>3.1.4</maven.install.plugin.version>
-        <maven-invoker-plugin.version>3.9.1</maven-invoker-plugin.version>
-        <archetype-packaging.version>3.4.1</archetype-packaging.version>
-        <maven-assembly-plugin.version>3.7.1</maven-assembly-plugin.version>
+        <maven.invoker.plugin.version>3.9.1</maven.invoker.plugin.version>
+        <archetype.packaging.version>3.4.1</archetype.packaging.version>
+        <maven.assembly.plugin.version>3.7.1</maven.assembly.plugin.version>
         <license.maven.plugin.version>5.0.0</license.maven.plugin.version>
         <jaxws.maven.plugin.version>4.0.3</jaxws.maven.plugin.version>
         <doxia.module.markdown.version>2.0.0</doxia.module.markdown.version>
@@ -676,7 +676,7 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-invoker-plugin</artifactId>
-                    <version>${maven-invoker-plugin.version}</version>
+                    <version>${maven.invoker.plugin.version}</version>
                 </plugin>
                 <plugin>
                     <!-- plugin configuration and executions to properly use Java5 annotations,
