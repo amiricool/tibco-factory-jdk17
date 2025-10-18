@@ -26,6 +26,7 @@
         <fcunit.plugin.version>2.0.0</fcunit.plugin.version>
         <xmlunit.version>2.10.4</xmlunit.version>
         <wagon.webdav.version>3.5.3</wagon.webdav.version>
+        <maven.version>3.9.9</maven.version>
         <maven.site.plugin.version>3.21.0</maven.site.plugin.version>
         <maven.project.info.reports.plugin.version>3.9.0</maven.project.info.reports.plugin.version>
         <maven.dependency.plugin.version>${maven.project.info.reports.plugin.version}</maven.dependency.plugin.version>
@@ -891,6 +892,22 @@
                                 </requireProperty>
                             </rules>
                             <fail>true</fail>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>enforce-maven-env</id>
+                        <goals>
+                            <goal>enforce</goal>
+                        </goals>
+                        <configuration>
+                            <rules>
+                                <requireMavenVersion>
+                                    <version>[${maven.version},)</version>
+                                </requireMavenVersion>
+                                <requireJavaVersion>
+                                    <version>[${maven.compiler.release},)</version>
+                                </requireJavaVersion>
+                            </rules>
                         </configuration>
                     </execution>
                 </executions>
